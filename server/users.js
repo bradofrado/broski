@@ -11,6 +11,11 @@ const userSchema = new mongoose.Schema({
     email: String,
     firstname: String,
     lastname: String,
+    sellerRating: Number,
+    friends: [{
+        type: mongoose.Schema.ObjectId,
+        ref: 'User'
+    }],
     roles: [{
         type: String,
         default: ""

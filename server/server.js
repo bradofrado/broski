@@ -30,7 +30,11 @@ app.use(cookieSession({
 }));
 
 const users = require('./users.js');
+const locations = require('./locations.js');
+const listings = require('./listings.js');
 
 app.use('/api/users', users.routes);
+app.use('/api/listings', listings.routes);
+app.use('/api/locations', locations.routes);
 
 app.listen(port, () => console.log(`Server listening on port ${port}!`));
