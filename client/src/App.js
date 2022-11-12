@@ -17,10 +17,8 @@ function App() {
             <Header/>
             <div className="App-header">
                 <Routes>
-                    <Route element={<RequireAuth redirectTo="/login" />}>
-                        <Route path="/" element={<Home/>}/>
-                        <Route path="/profile" element={<Profile/>}/>
-                    </Route>
+                    <Route path="/" element={<Home/>}/>
+                    {/* <Route path="/profile" element={<Profile/>}/> */}
                     {/* <Route path="/" element={<Home/>}/> */}
                     <Route path="/login" element={<Login/>}/>
                     <Route path="/signup" element={<Signup/>}/>
