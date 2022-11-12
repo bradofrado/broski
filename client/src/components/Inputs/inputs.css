@@ -1,16 +1,20 @@
 /* inputs */
 
 .input {
-    background-color: #f1f1f1;
+    background-color: #fff;
     /* transition: background .15s ease,border .15s ease,box-shadow .15s ease,color .15s ease; */
     /* height: 50px; */
 }
 
+input:focus-visible {
+    outline: 0;
+}
+
 .button, .input {
-    border: none;
+    border: 1px solid;
     border-radius: 12px;
     min-height: 30px;
-    padding: 10px;
+    padding: 5px;
     text-decoration: none;
     color: #292017;
     font-size: 16px;
@@ -22,4 +26,9 @@
 
 .dropdown-toggle::after {
     content: none!important;
+}
+
+
+.no-border {
+    border: none
 }

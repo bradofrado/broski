@@ -1,10 +1,21 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ItemListing from "../../components/ItemListing/ItemListing";
 import ListingGrid from "../../components/ListingGrid/ListingGrid";
+import SearchBar from "../../components/SearchBar/SearchBar";
+import Toolbar from "../../components/Toolbar/Toolbar";
 
 export default function Marketplace() {
     const [listings, setListings] = useState([]);
+    const [search, setSearch] = useState("");
+    
+    const filtered = listings.filter(x => {
+        return x.name.toLowerCase().includes(search.toLowerCase());
+    });
+
+    const onSearch = (val) => {
+        setSearch(val);
+    }
 
     useEffect(() => {
         const init = async () => {
@@ -19,11 +30,13 @@ export default function Marketplace() {
         init();
     }, []);
 
-    return (<div className="d-flex flex-rowcol">
-    <ListingGrid>
-      {listings.map((x) => (
-        <ItemListing listing={x} />
-      ))}
-    </ListingGrid>
-  </div>)
+    return (<>
+    <Toolbar/>
+    <div className="d-flex flex-rowcol">
+            <ListingGrid>
+            {filtered.map((x) => (
+                <ItemListing listing={x} />
+            ))}
+            </ListingGrid>
+  </div></>)
 }
