@@ -13,7 +13,7 @@ export default function ListingGrid(props) {
   return (
     <div className="container">
       {children.map((x, i) => (
-        <div className="row">
+        <div className="row g-7">
           {children[i].map((y) => (
             <div className="col">{y}</div>
           ))}
