@@ -1,0 +1,71 @@
+.image-button-container {
+    width: 200px;
+    height: 200px;
+    position: relative;    
+}
+
+.image-button-container img {
+    height: 100%;
+    border-radius: 8px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.image-button-container .image-button {
+    position: relative;
+    color: inherit;
+    background-color: black;
+    transition: background-color .3s ease-in-out;
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+    border-radius: 8px;
+}
+
+.image-button-container .image-container {
+    height: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.image-hover:hover {
+    background-color: #3c3023;;
+    
+    color: inherit;
+    cursor: pointer;
+}
+
+.image-button-container .no-color {
+    background-color: rgba(255,255,255,0);
+}
+
+.image-button-container .no-color.image-hover:hover {
+    background-color: rgba(255, 255, 255, .25) !important;
+}
+
+.image-button-container .dark .no-color.image-hover:hover {
+    background-color: rgba(153, 153, 153, .25) !important;
+}
+
+.image-button-container .center-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.image-button-container .image-button-text, .image-button-text-2 {
+    font-size: 1.5em;
+    color: white;
+}
+
+@media only screen and (min-width: 960px) {
+    /* .image-button-container {
+        width: 300px;
+        height: 300px;
+    } */
+
+    .image-button-container {
+        margin: 10px;
+    }
+}

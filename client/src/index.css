@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat','Helvetica Neue',Helvetica,Arial,sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+
+/* Misc */
+
+.flex-rowcol {
+    flex-direction: column;
+}
+
+@media only screen and (min-width: 960px) {
+    .flex-rowcol {
+        flex-direction: row;
+    }
+}
+
+.m-20 {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.error-text {
+    color: #c73535;
+    margin: 0;
+}

@@ -1,0 +1,25 @@
+/* inputs */
+
+.input {
+    background-color: #f1f1f1;
+    /* transition: background .15s ease,border .15s ease,box-shadow .15s ease,color .15s ease; */
+    /* height: 50px; */
+}
+
+.button, .input {
+    border: none;
+    border-radius: 12px;
+    min-height: 30px;
+    padding: 10px;
+    text-decoration: none;
+    color: #292017;
+    font-size: 16px;
+}
+
+.dropdown button{
+    min-width: 100px;
+}
+
+.dropdown-toggle::after {
+    content: none!important;
+}
