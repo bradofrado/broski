@@ -1,3 +1,15 @@
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+
 export default function ItemListing(props) {
-    return <>{props.listing.name}</>
+  return (
+    <Card style={{ width: "18rem" }} text="black">
+      <Card.Img variant="top" src="skis.jpg" />
+      <Card.Body>
+        <Card.Title>{props.listing.ProductName}</Card.Title>
+        <Card.Text>From: {props.listing.UserName}</Card.Text>
+        <Button variant="primary">Buy: ${props.listing.price.toFixed(2)}</Button>
+      </Card.Body>
+    </Card>
+  );
 }
