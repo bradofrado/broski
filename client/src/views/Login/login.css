@@ -1,14 +1,19 @@
 /* Login view */
 .login-container {
-    width: 80%;
-    margin: 10px auto;
-    display: grid;
-    grid-template-rows: auto auto auto;
-    grid-row-gap: 10px;
+  width: 80%;
+  margin: 10px auto;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-row-gap: 10px;
 }
 
 @media only screen and (min-width: 960px) {
-    .login-container {
-        width: 30%;
-    }
+  .login-container {
+    width: 30%;
+  }
+}
+
+.loginBox {
+  width: 100%;
+  padding: 40px;
 }
