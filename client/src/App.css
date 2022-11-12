@@ -3,7 +3,7 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  background-color: #FFF;
+  background-color: #fff;
   color: black;
 }
 
@@ -39,4 +39,17 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.menuImage {
+  width: 400px;
+  height: auto;
+}
+
+.menuTitle {
+  padding: 20px;
+}
+
+.navImage {
+  width: 55px;
 }
