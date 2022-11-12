@@ -91,9 +91,22 @@ const Listing = mongoose.model('Listing', listingSchema);
 
 /* Endpoints */
 
+const listings = [{
+    name: "Snowboard",
+    price: 5,
+    productType: "snow",
+    image: "path",
+    seller: {
+        firstname: "Braydon"
+    },
+    location: {
+        city: "Provo",
+        state: "Utah"
+    }
+}]
 router.get('/', async (req, res) => {
     try {
-        const listings = await Listing.find();
+        //const listings = await Listing.find();
 
         res.send(listings);
     } catch(ex) {
