@@ -1,3 +1,3 @@
 export default function ItemListing(props) {
-    return <>Hello World</>
+    return <>{props.listing.name}</>
 }
