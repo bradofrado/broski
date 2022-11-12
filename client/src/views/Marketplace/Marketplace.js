@@ -31,7 +31,7 @@ export default function Marketplace() {
     }, []);
 
     return (<>
-    <Toolbar/>
+    <Toolbar onSearch={onSearch}/>
     <div className="d-flex flex-rowcol">
             <ListingGrid>
             {filtered.map((x) => (
