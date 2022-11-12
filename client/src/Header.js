@@ -10,9 +10,7 @@ export default function Header() {
         <Container>
           <Navbar.Brand href="/">Navbar</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="/">Marketplace</Nav.Link>
-            <Nav.Link href="/features">Features</Nav.Link>
-            <Nav.Link href="/pricing">Pricing</Nav.Link>
+            <Nav.Link href="/market">Marketplace</Nav.Link>
           </Nav>
           <Nav>
             {/* <Nav.Link href="/profile"><Icon icon="profile"/></Nav.Link> */}

@@ -6,8 +6,8 @@ export default function ItemListing(props) {
     <Card style={{ width: "18rem" }} text="black">
       <Card.Img variant="top" src="skis.jpg" />
       <Card.Body>
-        <Card.Title>{props.listing.ProductName}</Card.Title>
-        <Card.Text>From: {props.listing.UserName}</Card.Text>
+        <Card.Title>{props.listing.name}</Card.Title>
+        <Card.Text>From: {props.listing.seller.firstname}</Card.Text>
         <Button variant="primary">Buy: ${props.listing.price.toFixed(2)}</Button>
       </Card.Body>
     </Card>

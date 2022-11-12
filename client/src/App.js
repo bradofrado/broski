@@ -7,6 +7,7 @@ import RequireAuth from './components/RequireAuth';
 import Header from './Header';
 import Home from './views/Home/Home';
 import Login from './views/Login/Login';
+import Marketplace from './views/Marketplace/Marketplace';
 import PageNotFound from './views/PageNotFound/PageNotFound';
 import Profile from './views/Profile/Profile';
 import Signup from './views/Signup/Signup';
@@ -20,7 +21,8 @@ function App() {
                     <Route path="/" element={<Home/>}/>
                     {/* <Route path="/profile" element={<Profile/>}/> */}
                     {/* <Route path="/" element={<Home/>}/> */}
-                    <Route path="/login" element={<Login/>}/>
+                    <Route path="/market" element={<Marketplace/>}/>
+                    <Route path="/login" element={<Login/>}/>                    
                     <Route path="/signup" element={<Signup/>}/>
                     <Route path="*" element={<PageNotFound />} />
                 </Routes>
