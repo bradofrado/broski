@@ -13,8 +13,7 @@ const userSchema = new mongoose.Schema({
     lastname: String,
     sellerRating: Number,
     friends: [{
-        type: mongoose.Schema.ObjectId,
-        ref: 'User'
+        type: String
     }],
     roles: [{
         type: String,
@@ -35,6 +34,47 @@ userSchema.pre('save', async function(next) {
         next(error);
     }
 });
+
+userSchema.methods.populate = async function () {
+    const friends = [];
+    for (let i = 0; i < this.friends.length; i++) {
+        let friend = this.friends[i];
+        if (mongoose.isValidObjectId(friend)) {
+            const item = await User.findOne({
+            _id: friend,
+            });
+    
+            if (item) {
+                friends.push(item);
+            } else {
+                friends.push(null);
+            }
+        }
+    }
+
+    this.friends = friends;
+  };
+
+// userSchema.post(/^find/, async function (docs, next) {
+//     let items = docs;
+//     const isArray = Array.isArray(docs);
+//     if (!isArray) {
+//       items = [docs];
+//     }
+  
+//     for (let i = items.length - 1; i >= 0; i--) {
+//       let item = items[i];
+//       if (item && item.populate) {
+//         item && (await item.populate());
+//       }
+//     }
+  
+//     if (!isArray && items.length == 0) {
+//       docs = null;
+//     }
+  
+//     next();
+//   });
 
 userSchema.methods.comparePassword = async function(password) {
     try {
