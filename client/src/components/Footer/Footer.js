@@ -5,7 +5,7 @@ export default function Footer() {
     return <>
         <div id="footer">
             <div className="footer-bottom">
-                ALL CONTENT COPYRIGHT &#169; 2022 React App
+                ALL CONTENT COPYRIGHT &#169; 2022 BROSKi
             </div>
             {/* <div className="icons-container">
                 <LinkIcon icon="instagram" className="icon"/>  
