@@ -4,7 +4,7 @@ import Card from "react-bootstrap/Card";
 export default function ItemListing(props) {
   return (
     <Card text="black" style={{ width: "251px" }} className="mt-3" border="white">
-      <a href="">
+      <a className="blackLinks" href="">
         <Card.Img
           variant="top"
           src={props.listing.image}
@@ -12,7 +12,7 @@ export default function ItemListing(props) {
         />
       </a>
       <Card.Body>
-        <a href="">
+        <a className="blackLinks" href="">
           <Card.Title style={{ margin: "3px" }} href="">
             {props.listing.name}
           </Card.Title>

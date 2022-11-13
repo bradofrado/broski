@@ -62,3 +62,17 @@
 .strong {
   margin: 0px;
 }
+
+.blackLinks:link {
+  color: greenyellow;
+  background-color: transparent;
+  text-decoration: none;
+}
+.blackLinks:visited {
+  color: black;
+  background-color: transparent;
+  text-decoration: underline;
+}
+.blackLinks:hover {
+  text-decoration: underline;
+}
