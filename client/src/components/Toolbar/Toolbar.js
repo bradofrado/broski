@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import FilterButton from "../FilterButton/FilterButton";
 import SearchBar from "../SearchBar/SearchBar";
+import SortByDropdown from "../SortByDropdown/SortByDropdown";
 import "./toolbar.css";
 
 const filters = ["Friends", "Biking", "Camping", "Snow", "Water", "Climbing"];
@@ -13,7 +14,7 @@ const filtersName = {
     Water: "Water",
     Climbing: "Climb"
 }
-export default function Toolbar({onSearch, ...props}) {
+export default function Toolbar({onSearch, sortValue, onSortSelect, ...props}) {
     //const [filterStates, setFilterStates] = useState(filters.slice());
 
     const changeFilter = (name, state) => {
@@ -36,6 +37,7 @@ export default function Toolbar({onSearch, ...props}) {
             <Nav className="me-auto">
                 {filters.map(x => <FilterButton className="mx-2" state={props.filters.includes(x)} onChange={(state) => changeFilter(x, state)}>{filtersName[x]}</FilterButton>)}
             </Nav>
+            <SortByDropdown onSelect={onSortSelect} value={sortValue}/>
         </Container>
     </Navbar>
     </>

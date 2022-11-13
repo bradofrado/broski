@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useMemo, useRef, useState } from "react";
 import ItemListing from "../../components/ItemListing/ItemListing";
 import ListingGrid from "../../components/ListingGrid/ListingGrid";
+import MessageBox from "../../components/MessageBox.js/MessageBox";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import Toolbar from "../../components/Toolbar/Toolbar";
 import { useAuth } from "../../util";
@@ -12,14 +13,41 @@ export default function Marketplace() {
     const [listings, setListings] = useState([]);
     const [search, setSearch] = useState("");
     const [filters, setFilters] = useState(productTypes.map(x => x[0].toUpperCase() + x.substring(1)));
+    const [sortValue, setSortValue] = useState(null);
 
     const auth = useAuth();
 
     const includesFriend = (listing) => {
         return auth.user.friends.includes(listing.seller.firstname);
     }
+
+    const sortFiltered = (filtered) => {
+        if (sortValue === 'price-asc') {
+            return filtered.sort((a, b) => a.price - b.price);
+        }
+
+        if (sortValue === 'price-desc') {
+            return filtered.sort((b, a) => a.price - b.price);
+        }
+
+        if (productTypes.includes(sortValue)) {
+            return filtered.sort((a, b) => {
+                if (a.productType === sortValue) {
+                    return -1;
+                }
+
+                if (b.productType === sortValue) {
+                    return 1;
+                }
+
+                return 0;
+            })
+        }
+
+        return filtered;
+    }
     
-    const filtered = listings.filter(x => {
+    let filtered = listings.filter(x => {
         let filterMethods = [
             () => x.name.toLowerCase().includes(search.toLowerCase()),
             () => {
@@ -51,12 +79,18 @@ export default function Marketplace() {
         return true;
     });
 
+    filtered = sortFiltered(filtered);
+
     const onSearch = (val) => {
         setSearch(val);
     }
 
     const onFilterChange = (filters) => {
         setFilters(filters);
+    }
+
+    const onSortSelect = (val) => {
+        setSortValue(val);
     }
 
     useEffect(() => {
@@ -74,7 +108,8 @@ export default function Marketplace() {
     }, []);
 
     return (<>
-    <Toolbar onSearch={onSearch} filters={filters} onFilterChange={onFilterChange}/>
+    <Toolbar onSearch={onSearch} filters={filters} onFilterChange={onFilterChange} onSortSelect={onSortSelect} sortValue={sortValue}/>
+    <MessageBox />
     <div className="d-flex flex-rowcol">
             <ListingGrid>
             {filtered.map((x) => (
