@@ -7,12 +7,12 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import Toolbar from "../../components/Toolbar/Toolbar";
 import { useAuth } from "../../util";
 
-const productTypes = ["snow", "biking", "camping", "hiking", "water", "climbing"];
+const productTypes = ["snow", "biking", "camping", "water", "climbing"];
 
 export default function Marketplace() {
     const [listings, setListings] = useState([]);
     const [search, setSearch] = useState("");
-    const [filters, setFilters] = useState(productTypes.map(x => x[0].toUpperCase() + x.substring(1)));
+    const [filters, setFilters] = useState([])//productTypes.map(x => x[0].toUpperCase() + x.substring(1)));
     const [sortValue, setSortValue] = useState(null);
 
     const auth = useAuth();
@@ -58,6 +58,10 @@ export default function Marketplace() {
                 return true;
             },
             () => {
+                if (!productTypes.some(x => filters.map(x => x.toLowerCase()).includes(x.toLowerCase()))) {
+                    return true;
+                }
+
                 for (let productType of productTypes) {
                     if (!filters.map(x => x.toLowerCase()).includes(productType.toLowerCase())) {
                         if (x.productType === productType) {
