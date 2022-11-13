@@ -2,9 +2,13 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
 export default function ItemListing(props) {
+    const onClick = (e) => {
+        e.preventDefault();
+        props.onClick(props.listing);
+    }
   return (
-    <Card text="black" style={{ width: "251px" }} className="mt-2" border="white">
-      <a className="blackLinks" href="">
+    <Card text="black" style={{ width: "251px" }} className="mt-3" border="white">
+      <a className="blackLinks" href="" onClick={onClick}>
         <Card.Img
           variant="top"
           src={props.listing.image}
@@ -12,7 +16,7 @@ export default function ItemListing(props) {
         />
       </a>
       <Card.Body>
-        <a className="blackLinks" href="">
+        <a className="blackLinks" href="" onClick={onClick}>
           <Card.Title style={{ margin: "3px" }} href="">
             {props.listing.name}
           </Card.Title>

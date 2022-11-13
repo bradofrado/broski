@@ -40,6 +40,7 @@ export default function Toolbar({ onSearch, sortValue, onSortSelect, ...props })
                 className="mx-2"
                 state={props.filters.includes(x)}
                 onChange={(state) => changeFilter(x, state)}
+                isFriend={x === 'Friends'}
               >
                 {filtersName[x]}
               </FilterButton>

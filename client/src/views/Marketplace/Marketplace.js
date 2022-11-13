@@ -15,6 +15,7 @@ export default function Marketplace() {
   const [search, setSearch] = useState("");
   const [filters, setFilters] = useState([]); //productTypes.map(x => x[0].toUpperCase() + x.substring(1)));
   const [sortValue, setSortValue] = useState(null);
+  const [show, setShow] = useState(null);
 
   const auth = useAuth();
 
@@ -119,11 +120,11 @@ export default function Marketplace() {
         onSortSelect={onSortSelect}
         sortValue={sortValue}
       />
-      <MessageBoxModal show={true} />
+      <MessageBoxModal show={show !== null} listing={show} onClose={() => setShow(null)}/>
       <div className="d-flex flex-rowcol">
         <ListingGrid>
           {filtered.map((x) => (
-            <ItemListing listing={x} />
+            <ItemListing listing={x} onClick={(listing) => setShow(listing) }/>
           ))}
         </ListingGrid>
       </div>

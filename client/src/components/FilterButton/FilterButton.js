@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "../Inputs/Buttons";
 
-export default function FilterButton({ onChange, ...props }) {
+export default function FilterButton({ onChange, isFriend, ...props }) {
   const state = props.state ?? false;
   //const [state, setState] = useState(props.state);
 
@@ -13,7 +13,8 @@ export default function FilterButton({ onChange, ...props }) {
 
   return (
     <Button {...props} onClick={onClick} variant={variant}>
-      {props.children}
+      {!isFriend && props.children}
+      {isFriend && <img src="/friends.png" className="search-icon"/>}
     </Button>
   );
 }
