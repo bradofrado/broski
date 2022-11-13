@@ -104,7 +104,7 @@ const listings = [
     },
   },
   {
-    name: "Hex 5000 Snowboard",
+    name: "Hex Snowboard",
     price: 80,
     productType: "snow",
     image: "/snowboard1.png",

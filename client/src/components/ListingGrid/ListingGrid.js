@@ -1,8 +1,8 @@
 export default function ListingGrid(props) {
   const children = [];
   for (let i = 0; i < props.children.length; i++) {
-    let j = parseInt(i / 3);
-    if (i % 3 === 0) {
+    let j = parseInt(i / 4);
+    if (i % 4 === 0) {
       children.push([]);
     }
 

@@ -3,16 +3,31 @@ import Card from "react-bootstrap/Card";
 
 export default function ItemListing(props) {
   return (
-    <Card style={{ width: "18rem" }} text="black" className="mt-3">
-      <Card.Img variant="top" src={props.listing.image} style={{ width: "200px", height: "200px" }} />
+    <Card text="black" style={{ width: "251px" }} className="mt-3" border="white">
+      <a href="">
+        <Card.Img
+          variant="top"
+          src={props.listing.image}
+          style={{ width: "250px", height: "250px", borderRadius: "12px" }}
+        />
+      </a>
       <Card.Body>
-        <Card.Title>{props.listing.name}</Card.Title>
-        <Card.Text>Seller: {props.listing.seller.firstname}</Card.Text>
+        <a href="">
+          <Card.Title style={{ margin: "3px" }} href="">
+            {props.listing.name}
+          </Card.Title>
+        </a>
+        <Card.Text style={{ margin: "3px" }}>
+          <em>
+            {props.listing.seller.firstname} - {props.listing.location.city}, {props.listing.location.state}
+          </em>
+        </Card.Text>
+        <strong style={{ margin: "0px", padding: "0px" }}>${props.listing.price.toFixed(2)} / day</strong>
         {/* <Button variant="primary">Buy: ${props.listing.price.toFixed(2)}</Button> */}
       </Card.Body>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">${props.listing.price.toFixed(2)}</li>
-      </ul>
+      {/* <ul class="list-group list-group-flush">
+        <li class="list-group-item">${props.listing.price.toFixed(2)} / day</li>
+      </ul> */}
     </Card>
   );
 }
