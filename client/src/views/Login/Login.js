@@ -32,7 +32,7 @@ export default function Login() {
         <Input value={username} placeholder="Username" onChange={(val) => setUsername(val)} />
         <Input type="password" value={password} placeholder="Password" onChange={(val) => setPassword(val)} />
         {error && <p className="error-text">{error}</p>}
-        <Button type="submit" spinner={loading}>
+        <Button type="submit" className="btn-filter" spinner={loading}>
           Login
         </Button>
         <p>
