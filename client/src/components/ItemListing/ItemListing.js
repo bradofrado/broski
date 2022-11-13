@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 
 export default function ItemListing(props) {
   return (
-    <Card text="black" style={{ width: "251px" }} className="mt-3" border="white">
+    <Card text="black" style={{ width: "251px" }} className="mt-2" border="white">
       <a className="blackLinks" href="">
         <Card.Img
           variant="top"

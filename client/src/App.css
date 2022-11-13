@@ -76,3 +76,7 @@
 .blackLinks:hover {
   text-decoration: underline;
 }
+
+.btn-filter {
+  background-color: #d2b48c !important;
+}
