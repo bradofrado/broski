@@ -9,7 +9,7 @@ export default function Header() {
       <Navbar className="px-2" bg="dark" variant="dark">
         <Navbar.Brand href="/">
           <img className="navImage" src="Broskilogo.png"></img>
-          Broski
+          BROSKi
         </Navbar.Brand>
         <Nav>
           <Nav.Link href="/market">Marketplace</Nav.Link>

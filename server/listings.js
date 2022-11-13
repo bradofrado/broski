@@ -28,8 +28,7 @@ const listingSchema = new mongoose.Schema({
   // },
   productType: {
     type: String,
-    enum: ["snow", "water", "hiking", "camping", "cycling"],
-    default: "snow",
+    enum: ["snow", "water", "hiking", "camping", "biking", "climbing"],
   },
   seller: {
     type: mongoose.Schema.ObjectId,
@@ -236,7 +235,7 @@ const listings = [
   },
   {
     name: "Warm Snuggler",
-    price: 5,
+    price: 85,
     productType: "camping",
     image: "/sleepingbag1.png",
     seller: {
@@ -248,8 +247,8 @@ const listings = [
     },
   },
   {
-    name: "Two Person Sub40",
-    price: 5,
+    name: "Two Person Sub-15",
+    price: 65,
     productType: "camping",
     image: "/sleepingbag2.png",
     seller: {
@@ -261,12 +260,246 @@ const listings = [
     },
   },
   {
-    name: "Warm Snuggler",
+    name: "Sleeping Pad Patagonia",
+    price: 95,
+    productType: "camping",
+    image: "/sleepingpad.png",
+    seller: {
+      firstname: "Jenny",
+    },
+    location: {
+      city: "Provo",
+      state: "Utah",
+    },
+  },
+  {
+    name: "Sleeping Pad Columbia",
+    price: 25,
+    productType: "camping",
+    image: "/sleepingpad2.png",
+    seller: {
+      firstname: "Taylor",
+    },
+    location: {
+      city: "Provo",
+      state: "Utah",
+    },
+  },
+  {
+    name: "Hiking Backpack",
+    price: 85,
+    productType: "camping",
+    image: "/hikingpack.png",
+    seller: {
+      firstname: "Fernal",
+    },
+    location: {
+      city: "Provo",
+      state: "Utah",
+    },
+  },
+  {
+    name: "Cooler",
     price: 5,
     productType: "camping",
-    image: "/sleepingpad1.png",
+    image: "/cooler.png",
     seller: {
-      firstname: "Manny",
+      firstname: "Trent",
+    },
+    location: {
+      city: "Provo",
+      state: "Utah",
+    },
+  },
+  {
+    name: "Cool Paddleboard",
+    price: 35,
+    productType: "water",
+    image: "/paddleboard2.png",
+    seller: {
+      firstname: "Ben",
+    },
+    location: {
+      city: "Provo",
+      state: "Utah",
+    },
+  },
+  {
+    name: "Kayak for Two",
+    price: 65,
+    productType: "water",
+    image: "/kayak1.png",
+    seller: {
+      firstname: "Herald",
+    },
+    location: {
+      city: "Provo",
+      state: "Utah",
+    },
+  },
+  {
+    name: "Life Jacket",
+    price: 15,
+    productType: "water",
+    image: "/lifejacket.png",
+    seller: {
+      firstname: "TJ",
+    },
+    location: {
+      city: "Provo",
+      state: "Utah",
+    },
+  },
+  {
+    name: "Wakesurfing Board",
+    price: 305,
+    productType: "water",
+    image: "/wakesurf.png",
+    seller: {
+      firstname: "TJ",
+    },
+    location: {
+      city: "Provo",
+      state: "Utah",
+    },
+  },
+  {
+    name: "Surf Board",
+    price: 25,
+    productType: "water",
+    image: "/surfboard.png",
+    seller: {
+      firstname: "Jacob",
+    },
+    location: {
+      city: "Provo",
+      state: "Utah",
+    },
+  },
+  {
+    name: "Wakesurfing Board",
+    price: 25,
+    productType: "water",
+    image: "/wakesurf2.png",
+    seller: {
+      firstname: "TJ",
+    },
+    location: {
+      city: "Provo",
+      state: "Utah",
+    },
+  },
+  {
+    name: "Wetsuit",
+    price: 25,
+    productType: "water",
+    image: "/wetsuit.png",
+    seller: {
+      firstname: "Belle",
+    },
+    location: {
+      city: "Provo",
+      state: "Utah",
+    },
+  },
+  {
+    name: "Anchor System",
+    price: 35,
+    productType: "climbing",
+    image: "/anchorsystem.png",
+    seller: {
+      firstname: "Beatrice",
+    },
+    location: {
+      city: "Provo",
+      state: "Utah",
+    },
+  },
+  {
+    name: "Climbing Shoes",
+    price: 35,
+    productType: "climbing",
+    image: "/climbingshoes.png",
+    seller: {
+      firstname: "Adam",
+    },
+    location: {
+      city: "Provo",
+      state: "Utah",
+    },
+  },
+  {
+    name: "Mens Climbing Shoes",
+    price: 15,
+    productType: "climbing",
+    image: "/climbingshoes2.png",
+    seller: {
+      firstname: "John",
+    },
+    location: {
+      city: "Provo",
+      state: "Utah",
+    },
+  },
+  {
+    name: "Climbing Training",
+    price: 5,
+    productType: "climbing",
+    image: "/climbingtraining.png",
+    seller: {
+      firstname: "Beaver",
+    },
+    location: {
+      city: "Provo",
+      state: "Utah",
+    },
+  },
+  {
+    name: "Scwhin Model 5",
+    price: 35,
+    productType: "biking",
+    image: "/bike1.png",
+    seller: {
+      firstname: "Sarah",
+    },
+    location: {
+      city: "Provo",
+      state: "Utah",
+    },
+  },
+  {
+    name: "Fezzari Model Y",
+    price: 35,
+    productType: "biking",
+    image: "/bike2.png",
+    seller: {
+      firstname: "Jared",
+    },
+    location: {
+      city: "Provo",
+      state: "Utah",
+    },
+  },
+  {
+    name: "Car Bike Rack",
+    price: 105,
+    productType: "biking",
+    image: "/bikerack.png",
+    seller: {
+      firstname: "Carol",
+    },
+    location: {
+      city: "Provo",
+      state: "Utah",
+    },
+  },
+  {
+    name: "26'' Tire",
+    price: 105,
+    productType: "biking",
+    image: "/biketire.png",
+    seller: {
+      firstname: "Fred",
     },
     location: {
       city: "Provo",
