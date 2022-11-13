@@ -7,7 +7,6 @@ import "./toolbar.css";
 
 const filters = ["Friends", "Biking", "Camping", "Snow", "Water", "Climbing"];
 const filtersName = {
-  Friends: "Friends",
   Biking: "Bike",
   Camping: "Camp",
   Snow: "Snow",
@@ -38,7 +37,7 @@ export default function Toolbar({ onSearch, sortValue, onSortSelect, ...props })
           <Nav className="me-auto">
             {filters.map((x) => (
               <FilterButton
-                className="mx-2 filterButton"
+                className="mx-2"
                 state={props.filters.includes(x)}
                 onChange={(state) => changeFilter(x, state)}
               >

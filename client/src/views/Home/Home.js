@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <img className="menuImage" src="Broskilogo.png"></img>
       <h1 className="mb-3">Adventure Begins Here</h1>
-      <Button href="/market" class="btn btn-primary">
+      <Button href="/market" class="btn btn-filter">
         Start Exploring
       </Button>
     </>
