@@ -11,9 +11,10 @@ import Marketplace from './views/Marketplace/Marketplace';
 import PageNotFound from './views/PageNotFound/PageNotFound';
 import Profile from './views/Profile/Profile';
 import Signup from './views/Signup/Signup';
+import {HarmonySetup} from 'harmony-ai-editor';
 
 function App() {
-    return (
+    return (<>
         <div className="App">
             <Header/>
             <div className="App-header">
@@ -29,7 +30,8 @@ function App() {
             </div>
             <Footer />
         </div>
-    );
+        <HarmonySetup repositoryId="5466f77b-ad23-4cb5-8698-4f4d92ed4cf5"/>
+    </>);
 }
 
 export default App;
