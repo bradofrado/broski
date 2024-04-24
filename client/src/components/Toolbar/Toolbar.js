@@ -30,7 +30,8 @@ export default function Toolbar({ onSearch, sortValue, onSortSelect, ...props })
 
   return (
     <>
-      <Navbar bg="main" variant="dark" className="toolbar-container m-3">
+      <Navbar /** background-color:#5E6345FF;
+ */ bg="main" variant="dark" className="toolbar-container m-3">
         <Container>
           {/* <Navbar.Brand href="/">Navbar</Navbar.Brand> */}
           <SearchBar onChange={onSearch} />

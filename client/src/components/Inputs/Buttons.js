@@ -3,10 +3,12 @@ import "./inputs.css";
 
 export default function Button({children, spinner, ...props}) {
     if (props.href) {
-        return <a className="button" href={props.href} {...props}>{children}</a>
+        return <a /** background-color:#EAB061FF;
+ */ className="button" href={props.href} {...props}>{children}</a>
     }
     return <>
-        <B {...props}>
+        <B /** background-color:#838D95FF;
+ */ {...props}>
             {spinner && <><Spinner
                     as="span"
                     animation="border"

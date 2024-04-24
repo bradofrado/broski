@@ -15,7 +15,9 @@ export default function ListingGrid(props) {
       {children.map((x, i) => (
         <div className="row">
           {children[i].map((y) => (
-            <div className="col">{y}</div>
+            <div /** padding-right:6px;
+padding-left:6px;
+ */ className="col">{y}</div>
           ))}
         </div>
       ))}
